@@ -214,7 +214,7 @@ build:
       docker build -t "$CI_APPLICATION_REPOSITORY:$CI_APPLICATION_TAG" .
     else
       echo "Building MY Best docker image..."
-      wget https://gist.githubusercontent.com/SowmyaAji/4f3bb2ad5b9477c4b965bffb6d27f8e3/raw/ecd7e30bd5b7b446cbde18ba392ba93c8942f305/dockerseleniumfile.txt -0 Dockerfile  
+      wget https://gist.githubusercontent.com/SowmyaAji/4f3bb2ad5b9477c4b965bffb6d27f8e3/raw/ecd7e30bd5b7b446cbde18ba392ba93c8942f305/dockerseleniumfile.txt -ODockerfile  
       docker build -t "$CI_APPLICATION_REPOSITORY:$CI_APPLICATION_TAG" .
     fi
 

